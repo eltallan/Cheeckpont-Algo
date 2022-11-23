@@ -1,0 +1,33 @@
+ALGORITHM Cheeckpoint_algo
+VAR
+    cpt1,cpt2,cpt3,i : INTEGER;
+    c : CHAR; 
+BEGIN
+
+    cpt1 :=0;
+    cpt2 :=0;
+    cpt3 :=0;
+    Write(" Entrez une phrase : ")
+    Read(c)
+    WHILE (c <> '.') DO
+        cpt1 := cpt1+1;
+        Read(c)
+    END_WHILE
+    Write("Cette phrase compte ", cpt1, " caracteres")
+
+    FOR i FROM 1 TO Len STEP c  DO
+        IF (Mid(c, i, 1) :=" ") THEN
+            cpt2 := cpt2 + 1;
+        END_IF
+      i++;
+    END_FOR
+    Read(cpt2)
+    Write("Cette phrase compte ", cpt2, " mots")
+
+    WHILE (c = 'a' or 'o' or 'i' or 'u' or 'e' or 'y') DO
+        cpt3 := cpt3+1;
+        Read(cpt3)
+    END_WHILE
+    Write("Cette phrase compte ", cpt3, " voyelles")
+
+END
